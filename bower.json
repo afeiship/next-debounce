@@ -1,0 +1,26 @@
+{
+  "name": "next-debounce-throttle",
+  "description": "Debounce and throttle based on next toolkit.",
+  "main": "dist/next-debounce-throttle.js",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/next-debounce-throttle",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "gulp",
+    "gulpfile.js"
+  ]
+}
