@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <script src="../node_modules/next-js-core2/dist/next-js-core2.js"></script>
   <script src="../dist/next-debounce-throttle.min.js"></script>
 </head>
 <body>
@@ -17,13 +18,17 @@
     console.log('click!');
   };
 
-  document.querySelector('#btn2').onclick = nx.debounce(function () {
-    console.log('on click! with debounce!');
-  }, 1000, {name: 123});
+  document.querySelector('#btn2').onclick = function () {
+   nx.debounce(function(){
+     console.log('on click! with debounce!');
+   },200)
+  };
 
-  document.querySelector('#btn3').onclick = nx.throttle(function () {
-    console.log('on click! with throttle!');
-  }, 1000);
+  document.querySelector('#btn3').onclick = function () {
+      nx.throttle(function(){
+     console.log('on click! with throttle!');
+   },1000)
+  };
 </script>
 </body>
 </html>
