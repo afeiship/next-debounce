@@ -7,6 +7,9 @@
     "name": "afei",
     "email": "1290657123@qq.com"
   },
+  "scripts":{
+    "build":"gulp build"
+  },
   "main":"dist/next-debounce-throttle.js",
   "license": "MIT",
   "devDependencies": {

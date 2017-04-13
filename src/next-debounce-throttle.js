@@ -1,5 +1,6 @@
-(function (global) {
+(function () {
 
+  var global = window || this;
   var nx = global.nx || require('next-js-core2');
 
   function debounce(inCallback, inDelay, inContext, inArgs) {
@@ -46,4 +47,4 @@
   }
 
 
-}(this));
+}());
