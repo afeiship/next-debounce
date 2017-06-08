@@ -3,42 +3,40 @@
   var global = window || this;
   var nx = global.nx || require('next-js-core2');
 
-  var timer = null;
-  var last, deferTimer;
-
-  function debounce(inCallback, inInterval, inContext) {
-    var interval = inInterval || 100;
-    var timerFn = function () {
-      var context = inContext || this;
-      inCallback.apply(context);
-    };
-    clearTimeout(timer);
-    timer = setTimeout(timerFn, interval);
-  }
-
-  function throttle(inCallback, inInterval, inContext) {
-    var threshhold = inInterval || 250;
-    var now = +new Date;
-    var context = inContext;
-    var timerFn = function () {
-      last = now;
-      context = inContext || this;
-      inCallback.apply(inContext);
-    };
-    if (last && now < last + threshhold) {
-      // hold on to it
-      clearTimeout(deferTimer);
-      deferTimer = setTimeout(timerFn, threshhold);
-    } else {
-      last = now;
-      inCallback.apply(inContext);
-    }
-  }
-
   var NxDebounceThrouttle = nx.declare('nx.DebounceThrouttle',{
     statics:{
-      debounce:debounce,
-      throttle: throttle
+      debounce:function(inCallback, inDelay,inContext) {
+        var timer = null;
+        return function () {
+          var args = arguments;
+          var context = inContext || this;
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            inCallback.apply(context, args);
+          }, inDelay);
+        };
+      },
+      throttle: function (inCallback, inDelay, inContext) {
+        var threshhold = inDelay || 200;
+        var last,
+            deferTimer;
+        return function () {
+          var context = inContext || this;
+          var now = Date.now(),
+              args = arguments;
+          if (last && now < last + threshhold) {
+            // hold on to it
+            clearTimeout(deferTimer);
+            deferTimer = setTimeout(function () {
+              last = now;
+              inCallback.apply(context, args);
+            }, threshhold);
+          } else {
+            last = now;
+            inCallback.apply(context, args);
+          }
+        };
+      }
     }
   });
 
