@@ -35,17 +35,16 @@
     }
   }
 
-  nx.mix(nx, {
-    debounce: debounce,
-    throttle: throttle
+  var NxDebounceThrouttle = nx.declare('nx.DebounceThrouttle',{
+    statics:{
+      debounce:debounce,
+      throttle: throttle
+    }
   });
 
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-      debounce: debounce,
-      throttle: throttle
-    };
+    module.exports = NxDebounceThrouttle;
   }
 
 
