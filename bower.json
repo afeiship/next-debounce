@@ -1,7 +1,7 @@
 {
-  "name": "next-debounce-throttle",
-  "description": "Debounce and throttle based on next toolkit.",
-  "main": "dist/next-debounce-throttle.js",
+  "name": "next-debounce",
+  "description": "Debounce based on next toolkit.",
+  "main": "dist/next-debounce.js",
   "authors": [
     "afei"
   ],
@@ -9,7 +9,7 @@
   "keywords": [
     "next"
   ],
-  "homepage": "https://github.com/afeiship/next-debounce-throttle",
+  "homepage": "https://github.com/afeiship/next-debounce",
   "moduleType": [
     "amd"
   ],

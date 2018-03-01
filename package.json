@@ -1,8 +1,8 @@
 {
-  "name": "next-debounce-throttle",
-  "version": "0.0.0",
-  "description": "Debounce and throttle based on next toolkit.",
-  "homepage": "https://github.com/afeiship/next-debounce-throttle",
+  "name": "next-debounce",
+  "version": "0.0.1",
+  "description": "Debounce  based on next toolkit.",
+  "homepage": "https://github.com/afeiship/next-debounce",
   "author": {
     "name": "afei",
     "email": "1290657123@qq.com"
@@ -10,7 +10,7 @@
   "scripts": {
     "build": "gulp build"
   },
-  "main": "dist/next-debounce-throttle.js",
+  "main": "dist/next-debounce.js",
   "license": "MIT",
   "devDependencies": {
     "del": "^2.2.1",
