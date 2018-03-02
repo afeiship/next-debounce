@@ -5,7 +5,7 @@
 
   nx.debounce = function(inCallback, inDelay,inContext) {
     var timer = null;
-    var delay = inDelay || 100;
+    var delay = (inDelay == null) ? 100 : inDelay;
     return function () {
       var args = arguments;
       var context = inContext || this;
