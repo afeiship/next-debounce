@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <script src="../node_modules/next-js-core2/dist/next-js-core2.js"></script>
-  <script src="../dist/next-debounce-throttle.min.js"></script>
+  <script src="../dist/next-debounce.js"></script>
   <style>
     button{
       width:100%;
@@ -21,28 +21,17 @@
     button:focus{
       outline: none;
     }
-  </style>
+  </style>X
 </head>
 <body>
 <div class="actions">
-  <button id="btn1">click fast!!!</button>
   <button id="btn2">click with debounce!!!</button>
-  <button id="btn3">click with throttle!!!</button>
 </div>
 
 <script type="text/javascript">
-  var nxDebounce = nx.DebounceThrouttle;
-  document.querySelector('#btn1').onclick = function () {
-    console.log('click!');
-  };
-
-  document.querySelector('#btn2').onclick = nxDebounce.debounce( function () {
+  document.querySelector('#btn2').onclick = nx.debounce( function () {
     console.log('on click! with debounce!');
   },200);
-
-  document.querySelector('#btn3').onclick = nxDebounce.throttle(function () {
-    console.log('on click! with throttle!');
-  });
 </script>
 </body>
 </html>
