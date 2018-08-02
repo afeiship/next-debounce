@@ -1,8 +1,10 @@
 .idea
 .DS_Store
+.editorconfig
 **/npm-debug.log
 **/node_modules
+build
+docs
 test
 src
-gulp
 gulpfile.js
