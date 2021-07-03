@@ -1,38 +1,34 @@
-# next-debounce-throttle
-> Debounce and throttle based on next toolkit.
+# next-debounce
+> Debounce for next.
 
+[![version][version-image]][version-url]
+[![license][license-image]][license-url]
+[![size][size-image]][size-url]
+[![download][download-image]][download-url]
 
-## usage:
-```html
-<div class="actions">
-  <button id="btn1">click fast!!!</button>
-  <button id="btn2">click with debounce!!!</button>
-  <button id="btn3">click with throttle!!!</button>
-</div>
-
-<script type="text/javascript">
-  document.querySelector('#btn1').onclick = function () {
-    console.log('click!');
-  };
-
-  document.querySelector('#btn2').onclick = function () {
-   nx.debounce(function(){
-     console.log('on click! with debounce!');
-   },200)
-  };
-
-  document.querySelector('#btn3').onclick = function () {
-    nx.throttle(function(){
-      console.log('on click! with throttle!');
-    },1000)
-  };
-</script>
+## installation
+```bash
+npm install -S @jswork/next-debounce
 ```
 
+## usage
+```js
+import '@jswork/next-debounce';
 
-## resources:
-+ https://remysharp.com/2010/07/21/throttling-function-calls/
+//DOCS here!
+```
 
+## license
+Code released under [the MIT license](https://github.com/afeiship/next-debounce/blob/master/LICENSE.txt).
 
-## todos:
-- [ ] todo list..
+[version-image]: https://img.shields.io/npm/v/@jswork/next-debounce
+[version-url]: https://npmjs.org/package/@jswork/next-debounce
+
+[license-image]: https://img.shields.io/npm/l/@jswork/next-debounce
+[license-url]: https://github.com/afeiship/next-debounce/blob/master/LICENSE.txt
+
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/next-debounce
+[size-url]: https://github.com/afeiship/next-debounce/blob/master/dist/next-debounce.min.js
+
+[download-image]: https://img.shields.io/npm/dm/@jswork/next-debounce
+[download-url]: https://www.npmjs.com/package/@jswork/next-debounce
